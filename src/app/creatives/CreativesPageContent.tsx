@@ -4,6 +4,8 @@ import { useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { Search } from "lucide-react";
 import { CreativeCard } from "@/components/CreativeCard";
+import { CreativeSwipeBrowser } from "@/components/CreativeSwipeBrowser";
+import { BrowseModeToggle } from "@/components/BrowseModeToggle";
 import { disciplines } from "@/lib/data";
 import type { CreativeProfile, Discipline } from "@/types";
 
@@ -18,6 +20,7 @@ export default function CreativesPageContent({ initialCreatives }: CreativesPage
   const [query, setQuery] = useState("");
   const [discipline, setDiscipline] = useState(initialDiscipline);
   const [city, setCity] = useState("");
+  const [mode, setMode] = useState<"grid" | "swipe">("swipe");
 
   const filtered = useMemo(() => {
     return initialCreatives.filter((c) => {
@@ -40,11 +43,16 @@ export default function CreativesPageContent({ initialCreatives }: CreativesPage
   const uniqueCities = [...new Set(initialCreatives.map((c) => c.city))];
 
   return (
-    <div className="mx-auto max-w-6xl px-6 py-12">
-      <h1 className="text-3xl font-semibold">Search creatives</h1>
-      <p className="mt-2 text-muted">
-        Find artists, designers, photographers, and collaborators by skill and location.
-      </p>
+    <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-12">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <h1 className="text-3xl font-semibold">Search creatives</h1>
+          <p className="mt-2 text-muted">
+            Find artists and collaborators — swipe profiles or browse the grid.
+          </p>
+        </div>
+        <BrowseModeToggle mode={mode} onChange={setMode} />
+      </div>
 
       <div className="mt-8 flex flex-col gap-4 rounded-2xl border border-mist bg-white p-5 sm:flex-row sm:items-end">
         <div className="flex-1">
@@ -72,7 +80,7 @@ export default function CreativesPageContent({ initialCreatives }: CreativesPage
             id="discipline"
             value={discipline}
             onChange={(e) => setDiscipline(e.target.value)}
-            className="mt-1.5 rounded-xl border border-mist px-4 py-2.5 text-sm focus:border-clay focus:outline-none"
+            className="mt-1.5 w-full rounded-xl border border-mist px-4 py-2.5 text-sm focus:border-clay focus:outline-none sm:w-auto"
           >
             <option value="">All disciplines</option>
             {disciplines.map((d) => (
@@ -91,7 +99,7 @@ export default function CreativesPageContent({ initialCreatives }: CreativesPage
             id="city"
             value={city}
             onChange={(e) => setCity(e.target.value)}
-            className="mt-1.5 rounded-xl border border-mist px-4 py-2.5 text-sm focus:border-clay focus:outline-none"
+            className="mt-1.5 w-full rounded-xl border border-mist px-4 py-2.5 text-sm focus:border-clay focus:outline-none sm:w-auto"
           >
             <option value="">Worldwide</option>
             {uniqueCities.map((c) => (
@@ -107,17 +115,24 @@ export default function CreativesPageContent({ initialCreatives }: CreativesPage
         {filtered.length} creative{filtered.length !== 1 ? "s" : ""} found
       </p>
 
-      <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {filtered.map((creative) => (
-          <CreativeCard key={creative.id} creative={creative} />
-        ))}
+      <div className="mt-6">
+        {mode === "swipe" ? (
+          <CreativeSwipeBrowser creatives={filtered} />
+        ) : (
+          <>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {filtered.map((creative) => (
+                <CreativeCard key={creative.id} creative={creative} />
+              ))}
+            </div>
+            {filtered.length === 0 && (
+              <p className="mt-12 text-center text-muted">
+                No creatives match your filters. Try broadening your search.
+              </p>
+            )}
+          </>
+        )}
       </div>
-
-      {filtered.length === 0 && (
-        <p className="mt-12 text-center text-muted">
-          No creatives match your filters. Try broadening your search.
-        </p>
-      )}
     </div>
   );
 }

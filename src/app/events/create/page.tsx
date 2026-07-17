@@ -55,7 +55,17 @@ export default async function CreateEventPage({ searchParams }: CreateEventPageP
           <Field label="Country" name="country" required placeholder="Norway" />
         </div>
 
-        <Field label="Location / venue" name="location" required placeholder="Kaffebrenneriet, Øvregaten 12" />
+        <div>
+          <Field
+            label="Location / venue"
+            name="location"
+            required
+            placeholder="Kaffebrenneriet, Øvregaten 12"
+          />
+          <p className="mt-1 text-xs text-muted">
+            Use a full street address so guests can open it in Google Maps.
+          </p>
+        </div>
 
         <div>
           <label htmlFor="description" className="block text-sm font-medium">

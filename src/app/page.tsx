@@ -92,11 +92,11 @@ export default async function HomePage() {
               View all events →
             </Link>
           </div>
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {featuredEvents.map((event) => (
-              <EventCard key={event.id} event={event} />
-            ))}
-          </div>
+        <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {featuredEvents.map((event) => (
+            <EventCard key={event.id} event={event} />
+          ))}
+        </div>
           {featuredEvents.length === 0 && (
             <div className="mt-10 rounded-2xl border border-dashed border-mist bg-stone p-10 text-center">
               <p className="text-muted">No events yet — be the first to host a creative meetup.</p>

@@ -77,7 +77,17 @@ export default async function EditEventPage({ params, searchParams }: EditEventP
           <Field label="Country" name="country" defaultValue={event.country} required />
         </div>
 
-        <Field label="Location / venue" name="location" defaultValue={event.location} required />
+        <div>
+          <Field
+            label="Location / venue"
+            name="location"
+            defaultValue={event.location}
+            required
+          />
+          <p className="mt-1 text-xs text-muted">
+            Use a full street address so guests can open it in Google Maps.
+          </p>
+        </div>
 
         <div>
           <label htmlFor="description" className="block text-sm font-medium">

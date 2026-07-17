@@ -3,7 +3,33 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    /* App-like: only vertical scroll — no sideways page motion */
+    overflow-x: hidden;
+    overscroll-behavior-x: none;
+    -webkit-text-size-adjust: 100%;
+  }
+
   body {
     @apply bg-stone text-ink antialiased;
+    overflow-x: hidden;
+    overscroll-behavior-x: none;
+    /* Prevent rubber-band sideways swipe on mobile browsers */
+    touch-action: pan-y;
+    min-height: 100dvh;
+  }
+
+  /* Keep layout within the viewport width */
+  .app-shell {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  img,
+  video,
+  iframe {
+    max-width: 100%;
   }
 }

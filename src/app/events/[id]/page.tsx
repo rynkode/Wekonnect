@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Calendar, Clock, MapPin, Users } from "lucide-react";
+import { Calendar, Clock, Users } from "lucide-react";
 import { getEventById, isUserAttending } from "@/lib/queries/events";
 import { getCreativeById, getAuthUser } from "@/lib/queries/creatives";
 import { DisciplinePill } from "@/components/DisciplinePill";
 import { JoinEventButton } from "@/components/JoinEventButton";
+import { EventLocationLink } from "@/components/EventLocationLink";
 
 interface EventDetailPageProps {
   params: Promise<{ id: string }>;
@@ -66,21 +67,22 @@ export default async function EventDetailPage({ params }: EventDetailPageProps) 
           )}
         </div>
 
-        <div className="mt-6 flex flex-wrap gap-4 text-muted">
+        <div className="mt-6 flex flex-col gap-3 text-muted sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
           <span className="flex items-center gap-2">
-            <Calendar className="h-4 w-4" />
+            <Calendar className="h-4 w-4 shrink-0" />
             {date}
           </span>
           <span className="flex items-center gap-2">
-            <Clock className="h-4 w-4" />
+            <Clock className="h-4 w-4 shrink-0" />
             {event.time}
           </span>
+          <EventLocationLink
+            location={event.location}
+            city={event.city}
+            country={event.country}
+          />
           <span className="flex items-center gap-2">
-            <MapPin className="h-4 w-4" />
-            {event.location}, {event.city}, {event.country}
-          </span>
-          <span className="flex items-center gap-2">
-            <Users className="h-4 w-4" />
+            <Users className="h-4 w-4 shrink-0" />
             {event.attendeeIds.length} attending
           </span>
         </div>
