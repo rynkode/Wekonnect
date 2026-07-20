@@ -8,6 +8,7 @@ export interface CollaborationRow {
   discipline: string;
   city: string;
   country: string;
+  timeline?: string | null;
   created_at: string;
   author?: { name: string; photo: string } | { name: string; photo: string }[];
 }
@@ -22,6 +23,7 @@ export function mapCollaboration(row: CollaborationRow): Collaboration {
     discipline: row.discipline as Discipline,
     city: row.city,
     country: row.country,
+    timeline: row.timeline ?? "",
     createdAt: row.created_at,
     author: authorData,
   };

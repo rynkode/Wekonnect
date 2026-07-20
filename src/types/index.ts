@@ -101,7 +101,7 @@ export interface CityCommunity {
   coverImageUrl: string;
 }
 
-/** A collaboration request — "looking for" post */
+/** A creative collaboration invite — "I'm looking for…" (not a job listing) */
 export interface Collaboration {
   id: string;
   authorId: string;
@@ -110,6 +110,8 @@ export interface Collaboration {
   discipline: Discipline | string;
   city: string;
   country: string;
+  /** When they want to create together, e.g. "This month", "Flexible" */
+  timeline: string;
   createdAt: string;
   author?: { name: string; photo: string };
 }

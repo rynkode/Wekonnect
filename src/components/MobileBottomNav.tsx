@@ -2,13 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Calendar, Compass, Users, UsersRound, User } from "lucide-react";
+import { Calendar, Compass, Handshake, UsersRound, User } from "lucide-react";
 
 const tabs = [
   { href: "/explore", label: "Explore", icon: Compass },
   { href: "/communities", label: "Tribes", icon: UsersRound },
+  { href: "/collaborate", label: "Collab", icon: Handshake },
   { href: "/events", label: "Events", icon: Calendar },
-  { href: "/creatives", label: "Creatives", icon: Users },
 ];
 
 interface MobileBottomNavProps {

@@ -10,6 +10,7 @@ create table public.collaborations (
   discipline text not null,
   city text not null default '',
   country text not null default '',
+  timeline text not null default '',
   created_at timestamptz not null default now()
 );
 

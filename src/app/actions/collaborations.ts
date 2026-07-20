@@ -18,23 +18,37 @@ export async function createCollaboration(formData: FormData) {
 
   if (!user) redirect("/auth/login?next=/collaborate/create");
 
-  const title = formData.get("title") as string;
-  const description = formData.get("description") as string;
+  const title = (formData.get("title") as string)?.trim();
+  const description = (formData.get("description") as string)?.trim();
   const discipline = formData.get("discipline") as string;
-  const city = (formData.get("city") as string) || "";
-  const country = (formData.get("country") as string) || "";
+  const city = ((formData.get("city") as string) || "").trim();
+  const country = ((formData.get("country") as string) || "").trim();
+  const timeline = ((formData.get("timeline") as string) || "").trim();
 
-  const { error } = await supabase.from("collaborations").insert({
-    author_id: user.id,
-    title,
-    description,
-    discipline,
-    city,
-    country,
-  });
+  if (!title || !description || !discipline) {
+    throw new Error("Title, description, and creative category are required.");
+  }
+
+  const { data, error } = await supabase
+    .from("collaborations")
+    .insert({
+      author_id: user.id,
+      title,
+      description,
+      discipline,
+      city,
+      country,
+      timeline,
+    })
+    .select("id")
+    .single();
 
   if (error) throw new Error(error.message);
 
   revalidatePath("/collaborate");
+  if (data?.id) {
+    revalidatePath(`/collaborate/${data.id}`);
+    redirect(`/collaborate/${data.id}`);
+  }
   redirect("/collaborate");
 }
