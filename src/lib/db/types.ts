@@ -1,14 +1,16 @@
 import type {
-  ConnectFor,
   CreativeProfile,
-  Discipline,
   Event,
-  EventCategory,
   PortfolioItem,
   Project,
   SocialLink,
 } from "@/types";
 import { getCityCoverImage, getEventImage, getProfilePhoto } from "@/lib/images";
+import {
+  normalizeConnectForList,
+  normalizeDisciplineList,
+  normalizeEventCategory,
+} from "@/lib/options";
 
 /** Raw row from Supabase `profiles` table */
 export interface ProfileRow {
@@ -64,12 +66,12 @@ export function mapProfile(row: ProfileRow): CreativeProfile {
     photo: getProfilePhoto(row.photo),
     city: row.city,
     country: row.country,
-    disciplines: row.disciplines as Discipline[],
+    disciplines: normalizeDisciplineList(row.disciplines),
     bio: row.bio,
     skills: row.skills,
     portfolio: row.portfolio ?? [],
     links: row.links ?? [],
-    connectFor: row.connect_for as ConnectFor[],
+    connectFor: normalizeConnectForList(row.connect_for),
     projects: row.projects ?? [],
   };
 }
@@ -79,7 +81,7 @@ export function mapEvent(row: EventRow): EventWithHost {
   return {
     id: row.id,
     title: row.title,
-    category: row.category as EventCategory,
+    category: normalizeEventCategory(row.category),
     hostId: row.host_id,
     date: row.date,
     time: row.time,

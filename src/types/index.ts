@@ -1,4 +1,4 @@
-/** Creative disciplines a user can select */
+/** Creative disciplines / interests a user can select */
 export type Discipline =
   | "Art"
   | "Design"
@@ -7,27 +7,40 @@ export type Discipline =
   | "Fashion"
   | "Architecture"
   | "Music"
+  | "Technology"
   | "Writing"
   | "Creative technology"
   | "Other";
 
-/** Why someone wants to connect */
+/** Why someone wants to connect — invitation, not just a portfolio tag */
 export type ConnectFor =
   | "Collaboration"
-  | "Networking"
+  | "Creative friendships"
   | "Learning"
+  | "Networking"
+  | "Projects"
+  | "Opportunities"
+  /** @deprecated legacy values still in DB */
   | "Finding opportunities"
   | "Building creative projects";
 
-/** Event categories */
+/** Event categories — belonging moments, not just calendar labels */
 export type EventCategory =
+  | "Design Coffee"
+  | "Artist Talks"
+  | "Photo Walks"
+  | "Creative Workshops"
+  | "Studio Visits"
+  | "Exhibition Openings"
+  | "Creator Meetups"
+  | "Other"
+  /** @deprecated legacy values still in DB */
   | "Design Kaffe"
   | "Artist Talk"
   | "Photo Walk"
   | "Creator Night"
   | "Gallery Meetup"
-  | "Workshop"
-  | "Other";
+  | "Workshop";
 
 export interface PortfolioItem {
   title: string;
@@ -99,4 +112,18 @@ export interface Collaboration {
   country: string;
   createdAt: string;
   author?: { name: string; photo: string };
+}
+
+/** A creative tribe — where people belong */
+export interface Community {
+  id: string;
+  name: string;
+  slug: string;
+  description: string;
+  city: string;
+  country: string;
+  /** Creative focus e.g. Design, Photography, Film */
+  focus: string;
+  coverImageUrl: string;
+  memberIds: string[];
 }

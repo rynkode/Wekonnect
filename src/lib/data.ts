@@ -8,7 +8,7 @@ export const creatives: CreativeProfile[] = [
     photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop",
     city: "Bergen",
     country: "Norway",
-    disciplines: ["Design", "Creative technology"],
+    disciplines: ["Design", "Technology"],
     bio: "Product designer exploring the intersection of Nordic minimalism and digital craft. Co-founder of a small studio in Bergen.",
     skills: ["UI Design", "Figma", "Design systems", "Prototyping"],
     portfolio: [
@@ -25,10 +25,10 @@ export const creatives: CreativeProfile[] = [
       { label: "Website", url: "https://example.com" },
       { label: "Instagram", url: "https://instagram.com" },
     ],
-    connectFor: ["Collaboration", "Networking"],
+    connectFor: ["Collaboration", "Networking", "Creative friendships"],
     projects: [
       {
-        title: "Design Kaffe Bergen",
+        title: "Design Coffee Bergen",
         description: "Monthly meetup for designers in Bergen.",
         year: 2025,
       },
@@ -54,7 +54,7 @@ export const creatives: CreativeProfile[] = [
       },
     ],
     links: [{ label: "Portfolio", url: "https://example.com" }],
-    connectFor: ["Collaboration", "Building creative projects"],
+    connectFor: ["Collaboration", "Projects"],
     projects: [
       {
         title: "Fjord Documentary",
@@ -98,7 +98,7 @@ export const creatives: CreativeProfile[] = [
       },
     ],
     links: [{ label: "Spotify", url: "https://spotify.com" }],
-    connectFor: ["Collaboration", "Finding opportunities"],
+    connectFor: ["Collaboration", "Opportunities"],
     projects: [
       {
         title: "Echoes",
@@ -142,7 +142,7 @@ export const creatives: CreativeProfile[] = [
       },
     ],
     links: [{ label: "Vimeo", url: "https://vimeo.com" }],
-    connectFor: ["Collaboration", "Building creative projects"],
+    connectFor: ["Collaboration", "Projects"],
     projects: [
       {
         title: "City Pulse",
@@ -157,8 +157,8 @@ export const creatives: CreativeProfile[] = [
 export const events: Event[] = [
   {
     id: "1",
-    title: "Design Kaffe — Bergen Edition",
-    category: "Design Kaffe",
+    title: "Design Coffee — Bergen Edition",
+    category: "Design Coffee",
     hostId: "1",
     date: "2026-07-18",
     time: "10:00",
@@ -173,7 +173,7 @@ export const events: Event[] = [
   {
     id: "2",
     title: "Photo Walk: Bryggen at Golden Hour",
-    category: "Photo Walk",
+    category: "Photo Walks",
     hostId: "2",
     date: "2026-07-20",
     time: "19:00",
@@ -187,8 +187,8 @@ export const events: Event[] = [
   },
   {
     id: "3",
-    title: "Creator Night — Short Films & Feedback",
-    category: "Creator Night",
+    title: "Creator Meetup — Short Films & Feedback",
+    category: "Creator Meetups",
     hostId: "6",
     date: "2026-07-25",
     time: "18:30",
@@ -202,8 +202,8 @@ export const events: Event[] = [
   },
   {
     id: "4",
-    title: "Artist Talk: Material & Memory",
-    category: "Artist Talk",
+    title: "Artist Talks: Material & Memory",
+    category: "Artist Talks",
     hostId: "3",
     date: "2026-08-02",
     time: "14:00",
@@ -217,8 +217,8 @@ export const events: Event[] = [
   },
   {
     id: "5",
-    title: "Gallery Meetup: Emerging Voices",
-    category: "Gallery Meetup",
+    title: "Exhibition Opening: Emerging Voices",
+    category: "Exhibition Openings",
     hostId: "4",
     date: "2026-07-22",
     time: "17:00",
@@ -280,20 +280,32 @@ export const disciplines = [
   "Fashion",
   "Architecture",
   "Music",
+  "Technology",
   "Writing",
-  "Creative technology",
   "Other",
 ] as const;
 
 export const eventCategories = [
-  "Design Kaffe",
-  "Artist Talk",
-  "Photo Walk",
-  "Creator Night",
-  "Gallery Meetup",
-  "Workshop",
+  "Design Coffee",
+  "Artist Talks",
+  "Photo Walks",
+  "Creative Workshops",
+  "Studio Visits",
+  "Exhibition Openings",
+  "Creator Meetups",
   "Other",
 ] as const;
+
+// Re-export connection options for convenience
+export {
+  connectForOptions,
+  creativeInterests,
+  normalizeConnectFor,
+  normalizeConnectForList,
+  normalizeEventCategory,
+  normalizeDisciplineList,
+  getEventWelcomeLine,
+} from "@/lib/options";
 
 /** Helper: find a creative by id */
 export function getCreativeById(id: string): CreativeProfile | undefined {

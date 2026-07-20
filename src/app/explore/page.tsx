@@ -1,20 +1,23 @@
 import { EventCard } from "@/components/EventCard";
 import { CreativeCard } from "@/components/CreativeCard";
 import { CityCard } from "@/components/CityCard";
+import { CommunityCard } from "@/components/CommunityCard";
 import { getEvents } from "@/lib/queries/events";
 import { getCreatives } from "@/lib/queries/creatives";
 import { getCitiesWithCounts } from "@/lib/queries/cities";
+import { getCommunities } from "@/lib/queries/communities";
 
 export const metadata = {
   title: "Explore — WeKonnect",
-  description: "Discover creatives, events, and city communities on WeKonnect.",
+  description: "Discover creatives, events, and communities on WeKonnect.",
 };
 
 export default async function ExplorePage() {
-  const [events, creatives, citiesWithCounts] = await Promise.all([
+  const [events, creatives, citiesWithCounts, communities] = await Promise.all([
     getEvents(),
     getCreatives(),
     getCitiesWithCounts(),
+    getCommunities(),
   ]);
 
   return (
@@ -50,6 +53,20 @@ export default async function ExplorePage() {
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {creatives.slice(0, 3).map((creative) => (
             <CreativeCard key={creative.id} creative={creative} />
+          ))}
+        </div>
+      </section>
+
+      <section className="mt-16">
+        <div className="flex items-center justify-between">
+          <h2 className="text-xl font-semibold">Communities</h2>
+          <a href="/communities" className="text-sm font-medium text-clay hover:underline">
+            Find your tribe →
+          </a>
+        </div>
+        <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {communities.slice(0, 3).map((community) => (
+            <CommunityCard key={community.id} community={community} />
           ))}
         </div>
       </section>

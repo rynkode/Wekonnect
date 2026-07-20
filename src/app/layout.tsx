@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist } from "next/font/google";
+import { Geist, Syne } from "next/font/google";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
@@ -11,10 +11,16 @@ const geist = Geist({
   variable: "--font-geist-sans",
 });
 
+const syne = Syne({
+  subsets: ["latin"],
+  variable: "--font-display",
+  weight: ["500", "600", "700"],
+});
+
 export const metadata: Metadata = {
-  title: "WeKonnect — Connect through creativity",
+  title: "WeKonnect — Find your creative community",
   description:
-    "A global creative network for artists, designers, photographers, filmmakers, and more. Discover events, meet creatives, and collaborate.",
+    "No creative should feel alone. Meet creatives, join communities, attend events, and collaborate anywhere in the world.",
 };
 
 export const viewport: Viewport = {
@@ -33,7 +39,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className={`${geist.variable} font-sans`}>
+      <body className={`${geist.variable} ${syne.variable} font-sans`}>
         <div className="app-shell">
           <Navbar />
           <main className="min-h-screen pb-20 md:pb-0">{children}</main>

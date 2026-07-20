@@ -42,18 +42,12 @@ export async function updateProfile(formData: FormData) {
   const country = formData.get("country") as string;
   const bio = formData.get("bio") as string;
   const skillsRaw = formData.get("skills") as string;
-  const disciplinesRaw = formData.get("disciplines") as string;
-  const connectForRaw = formData.get("connectFor") as string;
 
   const skills = skillsRaw
     ? skillsRaw.split(",").map((s) => s.trim()).filter(Boolean)
     : [];
-  const disciplines = disciplinesRaw
-    ? (disciplinesRaw.split(",").map((s) => s.trim()).filter(Boolean) as Discipline[])
-    : [];
-  const connect_for = connectForRaw
-    ? (connectForRaw.split(",").map((s) => s.trim()).filter(Boolean) as ConnectFor[])
-    : [];
+  const disciplines = formData.getAll("disciplines").map(String).filter(Boolean) as Discipline[];
+  const connect_for = formData.getAll("connectFor").map(String).filter(Boolean) as ConnectFor[];
 
   const { error } = await supabase
     .from("profiles")

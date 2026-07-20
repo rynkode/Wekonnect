@@ -7,6 +7,7 @@ import { SubmitButton } from "@/components/SubmitButton";
 import { getAuthUser } from "@/lib/queries/creatives";
 import { getEventById } from "@/lib/queries/events";
 import { eventCategories } from "@/lib/data";
+import { normalizeEventCategory } from "@/lib/options";
 
 interface EditEventPageProps {
   params: Promise<{ id: string }>;
@@ -33,7 +34,9 @@ export default async function EditEventPage({ params, searchParams }: EditEventP
   return (
     <div className="mx-auto max-w-2xl px-6 py-12">
       <h1 className="text-3xl font-semibold">Edit event</h1>
-      <p className="mt-2 text-muted">Update your meetup details or replace the cover image.</p>
+      <p className="mt-2 text-muted">
+        Keep your gathering welcoming — come alone, leave connected.
+      </p>
 
       {error && (
         <div className="mt-6">
@@ -50,13 +53,13 @@ export default async function EditEventPage({ params, searchParams }: EditEventP
 
         <div>
           <label htmlFor="category" className="block text-sm font-medium">
-            Category
+            Creative category
           </label>
           <select
             id="category"
             name="category"
             required
-            defaultValue={event.category}
+            defaultValue={normalizeEventCategory(event.category)}
             className="mt-1.5 w-full rounded-xl border border-mist bg-white px-4 py-2.5 text-sm focus:border-clay focus:outline-none focus:ring-1 focus:ring-clay"
           >
             {eventCategories.map((cat) => (

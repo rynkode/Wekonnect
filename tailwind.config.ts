@@ -21,6 +21,21 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-geist-sans)", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "var(--font-geist-sans)", "sans-serif"],
+      },
+      keyframes: {
+        "hero-fade": {
+          "0%": { opacity: "0", transform: "translateY(18px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        "hero-ken": {
+          "0%": { transform: "scale(1.08)" },
+          "100%": { transform: "scale(1)" },
+        },
+      },
+      animation: {
+        "hero-fade": "hero-fade 0.9s ease-out both",
+        "hero-ken": "hero-ken 12s ease-out both",
       },
     },
   },

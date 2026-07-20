@@ -15,7 +15,8 @@ export default async function CreateEventPage({ searchParams }: CreateEventPageP
     <div className="mx-auto max-w-2xl px-6 py-12">
       <h1 className="text-3xl font-semibold">Create an event</h1>
       <p className="mt-2 text-muted">
-        Host a creative meetup — Design Kaffe, photo walk, artist talk, or anything that brings people together.
+        Host a gathering where people can belong — Design Coffee, photo walks, workshops, and more.
+        Come alone. Leave connected.
       </p>
 
       {error && (
@@ -25,11 +26,16 @@ export default async function CreateEventPage({ searchParams }: CreateEventPageP
       )}
 
       <form action={createEvent} encType="multipart/form-data" className="mt-10 space-y-6">
-        <Field label="Event title" name="title" required placeholder="Design Kaffe — Bergen Edition" />
+        <Field
+          label="Event title"
+          name="title"
+          required
+          placeholder="Design Coffee — Bergen Edition"
+        />
 
         <div>
           <label htmlFor="category" className="block text-sm font-medium">
-            Category
+            Creative category
           </label>
           <select
             id="category"
@@ -76,7 +82,7 @@ export default async function CreateEventPage({ searchParams }: CreateEventPageP
             name="description"
             required
             rows={5}
-            placeholder="Tell people what to expect, who it's for, and what to bring…"
+            placeholder="Welcome people warmly — what will happen, who it's for, and why coming alone is perfectly OK…"
             className="mt-1.5 w-full rounded-xl border border-mist bg-white px-4 py-2.5 text-sm focus:border-clay focus:outline-none focus:ring-1 focus:ring-clay"
           />
         </div>
