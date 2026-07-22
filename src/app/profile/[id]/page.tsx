@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ExternalLink, HeartHandshake, MapPin } from "lucide-react";
 import { getCreativeById, getAuthUser } from "@/lib/queries/creatives";
 import { DisciplinePill } from "@/components/DisciplinePill";
+import { MessageCreativeButton } from "@/components/MessageCreativeButton";
 import { normalizeConnectForList } from "@/lib/options";
 
 interface ProfilePageProps {
@@ -75,13 +76,21 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
             </div>
           </div>
 
-          {isOwnProfile && (
+          {isOwnProfile ? (
             <Link
               href="/profile/edit"
               className="shrink-0 rounded-full border border-mist bg-white px-4 py-2 text-sm font-medium hover:border-clay"
             >
               Edit profile
             </Link>
+          ) : (
+            <div className="shrink-0 sm:max-w-xs">
+              <MessageCreativeButton
+                profileId={creative.id}
+                name={creative.name}
+                isLoggedIn={Boolean(user)}
+              />
+            </div>
           )}
         </div>
 
@@ -118,8 +127,9 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
 
           {!isOwnProfile && (
             <p className="mt-6 border-t border-mist pt-5 text-sm leading-relaxed text-muted">
-              If you share a city, a discipline, or a dream project — you already have something
-              in common. Reach out by joining the same events or posting on Collaborate.
+              If you share a city, a discipline, or a dream project — you already have
+              something in common. Send a message, join the same events, or meet on
+              Collaborate.
             </p>
           )}
         </section>

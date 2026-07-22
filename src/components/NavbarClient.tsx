@@ -11,6 +11,7 @@ const links = [
   { href: "/events", label: "Events" },
   { href: "/creatives", label: "Creatives" },
   { href: "/collaborate", label: "Collaborate" },
+  { href: "/messages", label: "Messages" },
 ];
 
 interface NavbarClientProps {

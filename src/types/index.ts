@@ -129,3 +129,19 @@ export interface Community {
   coverImageUrl: string;
   memberIds: string[];
 }
+
+/** One chat thread between creatives */
+export interface ConversationPreview {
+  id: string;
+  updatedAt: string;
+  otherUser: { id: string; name: string; photo: string };
+  lastMessage?: { body: string; createdAt: string; senderId: string };
+}
+
+export interface ChatMessage {
+  id: string;
+  conversationId: string;
+  senderId: string;
+  body: string;
+  createdAt: string;
+}

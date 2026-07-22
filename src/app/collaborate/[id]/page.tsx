@@ -136,6 +136,7 @@ export default async function CollaborationDetailPage({
               profileId={collab.authorId}
               name={collab.author?.name ?? "creator"}
               isOwn={isOwn}
+              isLoggedIn={Boolean(user)}
             />
           </div>
         </div>

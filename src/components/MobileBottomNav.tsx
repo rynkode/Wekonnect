@@ -2,12 +2,12 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Calendar, Compass, Handshake, UsersRound, User } from "lucide-react";
+import { Calendar, Compass, MessageCircle, UsersRound, User } from "lucide-react";
 
 const tabs = [
   { href: "/explore", label: "Explore", icon: Compass },
   { href: "/communities", label: "Tribes", icon: UsersRound },
-  { href: "/collaborate", label: "Collab", icon: Handshake },
+  { href: "/messages", label: "Messages", icon: MessageCircle },
   { href: "/events", label: "Events", icon: Calendar },
 ];
 

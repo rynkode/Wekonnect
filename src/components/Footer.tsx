@@ -32,6 +32,7 @@ export function Footer() {
               <h4 className="text-sm font-semibold">Wapate</h4>
               <ul className="mt-3 space-y-2 text-sm text-muted">
                 <li><Link href="/collaborate" className="hover:text-ink">Collaborate</Link></li>
+                <li><Link href="/messages" className="hover:text-ink">Messages</Link></li>
                 <li><Link href="/events/create" className="hover:text-ink">Create event</Link></li>
                 <li><span className="text-mist">About (soon)</span></li>
                 <li><Link href="/auth/signup" className="hover:text-ink">Join</Link></li>
