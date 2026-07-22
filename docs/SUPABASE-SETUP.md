@@ -1,4 +1,4 @@
-# Supabase Setup for WeKonnect
+# Supabase Setup for Wapate
 
 Follow these steps to connect your Next.js app to Supabase. **No UI changes required** — the app keeps using your existing design and falls back to demo data until Supabase is connected.
 

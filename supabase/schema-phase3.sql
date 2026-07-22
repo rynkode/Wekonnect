@@ -1,4 +1,4 @@
--- WeKonnect Phase 3 — run in Supabase SQL Editor AFTER schema.sql
+-- Wapate Phase 3 — run in Supabase SQL Editor AFTER schema.sql
 -- Adds: collaborations table + image storage bucket
 
 -- ─── Collaboration posts ─────────────────────────────────────────────────────

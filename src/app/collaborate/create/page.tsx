@@ -4,8 +4,8 @@ import { disciplines } from "@/lib/data";
 import { SubmitButton } from "@/components/SubmitButton";
 
 export const metadata = {
-  title: "Post a collaboration — WeKonnect",
-  description: "Invite someone to create with you on WeKonnect.",
+  title: "Post a collaboration — Wapate",
+  description: "Invite someone to create with you on Wapate.",
 };
 
 export default function CreateCollaborationPage() {

@@ -21,9 +21,9 @@ interface CommunityDetailPageProps {
 export async function generateMetadata({ params }: CommunityDetailPageProps) {
   const { slug } = await params;
   const community = await getCommunityBySlug(slug);
-  if (!community) return { title: "Community not found — WeKonnect" };
+  if (!community) return { title: "Community not found — Wapate" };
   return {
-    title: `${community.name} — WeKonnect`,
+    title: `${community.name} — Wapate`,
     description: community.description,
   };
 }

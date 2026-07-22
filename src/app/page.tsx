@@ -21,21 +21,21 @@ export default async function HomePage() {
     <div className="landing">
       <LandingHero />
 
-      {/* Why WeKonnect exists */}
+      {/* Why Wapate exists */}
       <section className="relative overflow-hidden border-b border-mist bg-[#f3efe8]">
         <div className="pointer-events-none absolute -right-24 top-0 h-72 w-72 rounded-full bg-sage/10 blur-3xl" />
         <div className="pointer-events-none absolute -left-16 bottom-0 h-64 w-64 rounded-full bg-clay/10 blur-3xl" />
         <div className="relative mx-auto max-w-3xl px-6 py-24 md:py-32">
           <Reveal>
             <p className="font-display text-sm font-medium uppercase tracking-[0.2em] text-sage">
-              Why WeKonnect exists
+              Why Wapate exists
             </p>
             <h2 className="mt-5 font-display text-3xl font-semibold leading-tight tracking-tight text-ink md:text-4xl">
               No creative should feel alone.
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-muted md:text-xl">
               Moving to a new city, starting creative work, or looking for collaborators
-              can feel isolating. WeKonnect exists so you can find your people — nearby
+              can feel isolating. Wapate exists so you can find your people — nearby
               and around the world — and create together.
             </p>
             <ul className="mt-10 space-y-4 text-base text-ink/80 md:text-lg">
@@ -205,7 +205,7 @@ export default async function HomePage() {
               From Bergen to Tokyo — and every city that creates.
             </h2>
             <p className="mt-4 max-w-xl text-white/70">
-              WeKonnect grows with the world&apos;s creative capitals and quiet hometown scenes alike.
+              Wapate grows with the world&apos;s creative capitals and quiet hometown scenes alike.
             </p>
           </Reveal>
 
@@ -242,7 +242,7 @@ export default async function HomePage() {
               No creative should feel alone.
             </h2>
             <p className="mx-auto mt-6 max-w-lg text-lg text-muted">
-              Join WeKonnect — find creatives near you, join communities, attend events,
+              Join Wapate — find creatives near you, join communities, attend events,
               and collaborate anywhere in the world.
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
@@ -250,7 +250,7 @@ export default async function HomePage() {
                 href="/auth/signup"
                 className="inline-flex items-center gap-2 rounded-full bg-ink px-8 py-3.5 text-sm font-medium text-stone transition-colors hover:bg-clay"
               >
-                Join WeKonnect
+                Join Wapate
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link

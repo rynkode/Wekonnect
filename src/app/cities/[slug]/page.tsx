@@ -17,8 +17,8 @@ interface CityPageProps {
 export async function generateMetadata({ params }: CityPageProps) {
   const { slug } = await params;
   const city = await getCityBySlug(slug);
-  if (!city) return { title: "City not found — WeKonnect" };
-  return { title: `WeKonnect ${city.name} — WeKonnect` };
+  if (!city) return { title: "City not found — Wapate" };
+  return { title: `${city.name} — Wapate` };
 }
 
 export default async function CityPage({ params }: CityPageProps) {
@@ -49,7 +49,7 @@ export default async function CityPage({ params }: CityPageProps) {
           <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/30 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 mx-auto max-w-6xl px-6 pb-10">
             <p className="text-sm font-medium uppercase tracking-widest text-clay-light">
-              WeKonnect
+              Wapate
             </p>
             <h1 className="text-4xl font-semibold text-white md:text-5xl">{city.name}</h1>
             <p className="mt-2 flex items-center gap-1 text-white/80">

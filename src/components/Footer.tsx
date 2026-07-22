@@ -8,9 +8,9 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-2">
               <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-ink text-sm font-bold text-stone">
-                WK
+                WP
               </span>
-              <span className="text-lg font-semibold">WeKonnect</span>
+              <span className="text-lg font-semibold">Wapate</span>
             </div>
             <p className="mt-3 max-w-sm text-sm text-muted">
               A global creative network. Discover people, events, and communities —
@@ -29,7 +29,7 @@ export function Footer() {
               </ul>
             </div>
             <div>
-              <h4 className="text-sm font-semibold">WeKonnect</h4>
+              <h4 className="text-sm font-semibold">Wapate</h4>
               <ul className="mt-3 space-y-2 text-sm text-muted">
                 <li><Link href="/collaborate" className="hover:text-ink">Collaborate</Link></li>
                 <li><Link href="/events/create" className="hover:text-ink">Create event</Link></li>
@@ -41,7 +41,7 @@ export function Footer() {
         </div>
 
         <p className="mt-10 border-t border-mist pt-6 text-center text-xs text-muted">
-          © {new Date().getFullYear()} WeKonnect · Making the world more connected through creativity
+          © {new Date().getFullYear()} Wapate · No creative should feel alone
         </p>
       </div>
     </footer>

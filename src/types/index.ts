@@ -91,7 +91,7 @@ export interface Event {
   attendeeIds: string[];
 }
 
-/** A city community on WeKonnect */
+/** A city community on Wapate */
 export interface CityCommunity {
   id: string;
   name: string;

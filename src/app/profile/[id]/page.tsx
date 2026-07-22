@@ -13,8 +13,8 @@ interface ProfilePageProps {
 export async function generateMetadata({ params }: ProfilePageProps) {
   const { id } = await params;
   const creative = await getCreativeById(id);
-  if (!creative) return { title: "Profile not found — WeKonnect" };
-  return { title: `${creative.name} — WeKonnect` };
+  if (!creative) return { title: "Profile not found — Wapate" };
+  return { title: `${creative.name} — Wapate` };
 }
 
 export default async function ProfilePage({ params }: ProfilePageProps) {
@@ -49,7 +49,7 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
 
             <div className="flex-1">
               <p className="font-display text-xs font-medium uppercase tracking-[0.2em] text-sage">
-                Creative on WeKonnect
+                Creative on Wapate
               </p>
               <h1 className="mt-2 font-display text-3xl font-semibold tracking-tight md:text-4xl">
                 {creative.name}
@@ -94,7 +94,7 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
                 Why {firstName} is here
               </h2>
               <p className="mt-1 text-sm text-muted">
-                Profiles on WeKonnect are invitations — not just portfolios.
+                Profiles on Wapate are invitations — not just portfolios.
               </p>
             </div>
           </div>

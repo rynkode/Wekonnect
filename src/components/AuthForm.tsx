@@ -64,7 +64,7 @@ export function AuthSwitch({ mode }: { mode: "login" | "signup" }) {
     <p className="mt-6 text-center text-sm text-muted">
       {mode === "login" ? (
         <>
-          New to WeKonnect?{" "}
+          New to Wapate?{" "}
           <Link href="/auth/signup" className="font-medium text-clay hover:underline">
             Create an account
           </Link>

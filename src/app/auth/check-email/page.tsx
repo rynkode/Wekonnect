@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Check your email — WeKonnect",
+  title: "Check your email — Wapate",
 };
 
 export default function CheckEmailPage() {

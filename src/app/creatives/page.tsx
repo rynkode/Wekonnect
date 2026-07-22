@@ -3,8 +3,8 @@ import { getCreatives } from "@/lib/queries/creatives";
 import CreativesPageContent from "./CreativesPageContent";
 
 export const metadata = {
-  title: "Creatives — WeKonnect",
-  description: "Search and discover creative people on WeKonnect.",
+  title: "Creatives — Wapate",
+  description: "Search and discover creative people on Wapate.",
 };
 
 export default async function CreativesPageWrapper() {

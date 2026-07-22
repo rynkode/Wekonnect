@@ -1,6 +1,6 @@
-# WeKonnect — Launch guide (Phase 4)
+# Wapate — Launch guide (Phase 4)
 
-When you're ready to put WeKonnect on the internet (wekonnect.com / wekonnect.no), follow these steps.
+When you're ready to put Wapate on the internet (wapate.no / wekonnect.no), follow these steps.
 
 ---
 
@@ -19,7 +19,7 @@ When you're ready to put WeKonnect on the internet (wekonnect.com / wekonnect.no
 cd C:\Users\Bruker\Projects\wekonnect
 git init
 git add .
-git commit -m "WeKonnect MVP — Phases 1–3"
+git commit -m "Wapate MVP — Phases 1–3"
 ```
 
 Create a repo on GitHub and push:
@@ -43,7 +43,7 @@ git push -u origin main
 |------|--------|
 | `NEXT_PUBLIC_SUPABASE_URL` | Your Supabase project URL |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Your Supabase anon key |
-| `NEXT_PUBLIC_SITE_URL` | `https://wekonnect.com` (or your Vercel URL first) |
+| `NEXT_PUBLIC_SITE_URL` | `https://wapate.no` (or your Vercel URL first) |
 
 5. Click **Deploy**
 
@@ -54,8 +54,8 @@ git push -u origin main
 In Supabase Dashboard:
 
 1. **Authentication → URL Configuration**
-   - Site URL: `https://wekonnect.com`
-   - Redirect URLs: add `https://wekonnect.com/auth/callback` and your Vercel preview URL
+   - Site URL: `https://wapate.no`
+   - Redirect URLs: add `https://wapate.no/auth/callback` and your Vercel preview URL
 
 2. **Authentication → Providers → Email**
    - Turn **Confirm email** ON for production (recommended)
@@ -68,8 +68,8 @@ In Supabase Dashboard:
 
 In Vercel → Project → **Settings → Domains**:
 
-- Add `wekonnect.com` and `www.wekonnect.com`
-- Add `wekonnect.no` if you want the Norwegian domain too
+- Add `wapate.no` and `www.wapate.no` (if you own that domain)
+- Or use `wekonnect.no` / `www.wekonnect.no` and brand the site as Wapate
 
 Vercel shows DNS records to add at your domain registrar. After DNS propagates (often 5–60 minutes), your site goes live.
 

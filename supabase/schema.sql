@@ -1,4 +1,4 @@
--- WeKonnect Phase 2 — run this in Supabase SQL Editor
+-- Wapate Phase 2 — run this in Supabase SQL Editor
 -- Dashboard → SQL → New query → paste → Run
 
 -- ─── Profiles (extends auth.users) ───────────────────────────────────────────

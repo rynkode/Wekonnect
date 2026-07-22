@@ -3,7 +3,7 @@ import { AuthForm, AuthSwitch } from "@/components/AuthForm";
 import { AuthError } from "@/components/AuthError";
 
 export const metadata = {
-  title: "Join WeKonnect",
+  title: "Join Wapate",
 };
 
 interface SignUpPageProps {
@@ -15,7 +15,7 @@ export default async function SignUpPage({ searchParams }: SignUpPageProps) {
 
   return (
     <div className="mx-auto max-w-md px-6 py-16">
-      <h1 className="text-3xl font-semibold">Join WeKonnect</h1>
+      <h1 className="text-3xl font-semibold">Join Wapate</h1>
       <p className="mt-2 text-muted">
         Create your creative profile and start discovering events worldwide.
       </p>

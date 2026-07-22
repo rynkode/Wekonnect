@@ -17,8 +17,8 @@ interface EditEventPageProps {
 export async function generateMetadata({ params }: EditEventPageProps) {
   const { id } = await params;
   const event = await getEventById(id);
-  if (!event) return { title: "Event not found — WeKonnect" };
-  return { title: `Edit ${event.title} — WeKonnect` };
+  if (!event) return { title: "Event not found — Wapate" };
+  return { title: `Edit ${event.title} — Wapate` };
 }
 
 export default async function EditEventPage({ params, searchParams }: EditEventPageProps) {

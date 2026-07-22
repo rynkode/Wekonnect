@@ -4,6 +4,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { getAuthUser } from "@/lib/queries/creatives";
+import { brand } from "@/lib/brand";
 import "./globals.css";
 
 const geist = Geist({
@@ -18,10 +19,9 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
-  title: "WeKonnect — Find your creative community",
-  description:
-    "No creative should feel alone. Meet creatives, join communities, attend events, and collaborate anywhere in the world.",
-};
+  title: brand.metaTitle,
+  description: brand.metaDescription,
+}
 
 export const viewport: Viewport = {
   width: "device-width",

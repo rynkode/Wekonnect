@@ -3,7 +3,7 @@ import { AuthForm, AuthSwitch } from "@/components/AuthForm";
 import { AuthError } from "@/components/AuthError";
 
 export const metadata = {
-  title: "Sign in — WeKonnect",
+  title: "Sign in — Wapate",
 };
 
 interface LoginPageProps {

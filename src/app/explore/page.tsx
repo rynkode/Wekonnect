@@ -8,8 +8,8 @@ import { getCitiesWithCounts } from "@/lib/queries/cities";
 import { getCommunities } from "@/lib/queries/communities";
 
 export const metadata = {
-  title: "Explore — WeKonnect",
-  description: "Discover creatives, events, and communities on WeKonnect.",
+  title: "Explore — Wapate",
+  description: "Discover creatives, events, and communities on Wapate.",
 };
 
 export default async function ExplorePage() {

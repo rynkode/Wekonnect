@@ -16,8 +16,8 @@ interface EventDetailPageProps {
 export async function generateMetadata({ params }: EventDetailPageProps) {
   const { id } = await params;
   const event = await getEventById(id);
-  if (!event) return { title: "Event not found — WeKonnect" };
-  return { title: `${event.title} — WeKonnect` };
+  if (!event) return { title: "Event not found — Wapate" };
+  return { title: `${event.title} — Wapate` };
 }
 
 export default async function EventDetailPage({ params }: EventDetailPageProps) {

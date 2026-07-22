@@ -31,10 +31,10 @@ export function NavbarClient({ isLoggedIn, profileName, userId }: NavbarClientPr
           onClick={() => setOpen(false)}
         >
           <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-ink text-sm font-bold text-stone">
-            WK
+            WP
           </span>
           <span className="text-lg font-semibold tracking-tight text-ink">
-            We<span className="text-clay">Konnect</span>
+            Wa<span className="text-clay">pate</span>
           </span>
         </Link>
 
@@ -180,7 +180,7 @@ export function NavbarClient({ isLoggedIn, profileName, userId }: NavbarClientPr
                     className="rounded-full bg-clay px-4 py-2.5 text-center text-sm font-medium text-white"
                     onClick={() => setOpen(false)}
                   >
-                    Join WeKonnect
+                    Join Wapate
                   </Link>
                 </div>
               )}

@@ -2,9 +2,9 @@ import { getCommunities } from "@/lib/queries/communities";
 import { CommunityCard } from "@/components/CommunityCard";
 
 export const metadata = {
-  title: "Communities — WeKonnect",
+  title: "Communities — Wapate",
   description:
-    "Find your tribe. Join creative communities by city and discipline on WeKonnect.",
+    "Find your tribe. Join creative communities by city and discipline on Wapate.",
 };
 
 export default async function CommunitiesPage() {

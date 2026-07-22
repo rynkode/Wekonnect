@@ -21,7 +21,7 @@ export function LandingHero() {
 
       <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-6 pb-16 pt-28 md:pb-24 md:pt-32">
         <p className="hero-brand font-display text-3xl font-semibold tracking-tight text-white md:text-5xl lg:text-6xl">
-          We<span className="text-clay-light">Konnect</span>
+          Wa<span className="text-clay-light">pate</span>
         </p>
 
         <h1 className="hero-headline mt-6 max-w-3xl font-display text-3xl font-semibold leading-[1.1] tracking-tight text-white md:text-5xl lg:text-[3.25rem]">
@@ -38,7 +38,7 @@ export function LandingHero() {
             href="/auth/signup"
             className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-medium text-ink transition-colors hover:bg-clay hover:text-white"
           >
-            Join WeKonnect
+            Join Wapate
             <ArrowRight className="h-4 w-4" />
           </Link>
           <Link

@@ -14,9 +14,9 @@ interface CollaborationDetailPageProps {
 export async function generateMetadata({ params }: CollaborationDetailPageProps) {
   const { id } = await params;
   const collab = await getCollaborationById(id);
-  if (!collab) return { title: "Collaboration not found — WeKonnect" };
+  if (!collab) return { title: "Collaboration not found — Wapate" };
   return {
-    title: `${collab.title} — WeKonnect`,
+    title: `${collab.title} — Wapate`,
     description: collab.description,
   };
 }

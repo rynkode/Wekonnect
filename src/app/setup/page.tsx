@@ -6,7 +6,7 @@ import { isSupabaseConfigured } from "@/lib/supabase/config";
 
 export const metadata = {
 
-  title: "Setup — WeKonnect",
+  title: "Setup — Wapate",
 
 };
 
@@ -68,7 +68,7 @@ export default function SetupPage() {
 
     <div className="mx-auto max-w-2xl px-6 py-16">
 
-      <h1 className="text-3xl font-semibold">WeKonnect setup</h1>
+      <h1 className="text-3xl font-semibold">Wapate setup</h1>
 
       <p className="mt-3 text-muted">
 
@@ -108,7 +108,7 @@ export default function SetupPage() {
 
               <Link href="/cities/bergen" className="text-sm font-medium text-clay hover:underline">
 
-                WeKonnect Bergen →
+                Wapate Bergen →
 
               </Link>
 
@@ -153,7 +153,7 @@ export default function SetupPage() {
             <h3 className="font-semibold">What&apos;s next?</h3>
 
             <p className="mt-2 text-sm text-muted">
-              When you&apos;re ready to go live on wekonnect.com, open{" "}
+              When you&apos;re ready to go live on wapate.no, open{" "}
               <code className="rounded bg-mist px-1.5 py-0.5 text-xs">docs/LAUNCH.md</code>{" "}
               in the project folder for deployment steps.
             </p>

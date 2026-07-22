@@ -1,4 +1,4 @@
-# WeKonnect MVP — Structure & User Experience
+# Wapate MVP — Structure & User Experience
 
 > **Mission:** Help creatives discover each other, collaborate, and meet through events — starting in places like Bergen, built for the world.
 
@@ -6,13 +6,13 @@
 
 ## 1. What is an MVP?
 
-**MVP = Minimum Viable Product.** The smallest version of WeKonnect that still delivers real value.
+**MVP = Minimum Viable Product.** The smallest version of Wapate that still delivers real value.
 
 For v1 we build **five things only:**
 
 | # | Feature | Why it matters |
 |---|---------|----------------|
-| 1 | Landing page | First impression — explains what WeKonnect is |
+| 1 | Landing page | First impression — explains what Wapate is |
 | 2 | Creative profiles | Identity — who you are as a creative |
 | 3 | Event creation | Hosts can start meetups |
 | 4 | Event discovery | People find events near them |
@@ -27,7 +27,7 @@ Everything else (chat, payments, notifications, mobile apps) comes **after** we 
 How the app is organized — like a map of every screen.
 
 ```
-WeKonnect
+Wapate
 ├── Home (Landing)           →  Welcome, mission, call-to-action
 ├── Explore                  →  Discover creatives, events, cities
 │   ├── Events               →  Browse & filter events
@@ -107,7 +107,7 @@ Explore → Creatives
 2. **How it works** — 3 steps: Create profile → Discover → Meet & collaborate
 3. **Featured events** — 3 real-looking cards (Bergen + global)
 4. **Creative disciplines** — Visual grid of fields (Art, Design, Film…)
-5. **Cities** — WeKonnect Bergen, London, New York, Tokyo
+5. **Cities** — Wapate Bergen, London, New York, Tokyo
 6. **Footer** — Brand, links, "Built for creatives everywhere"
 
 **Feel:** Premium magazine — lots of whitespace, strong typography, subtle motion.
@@ -233,7 +233,7 @@ These shapes define what we store — same structure whether we use mock JSON to
 
 **Folder structure:**
 ```
-wekonnect/
+wapate/
 ├── docs/                 ← Design & planning (you are here)
 ├── public/               ← Images, favicon
 ├── src/
@@ -247,7 +247,7 @@ wekonnect/
 
 ---
 
-## 8. Design System (WeKonnect brand)
+## 8. Design System (Wapate brand)
 
 ### Colors
 - **Ink** `#0f0f0f` — primary text
@@ -282,7 +282,7 @@ wekonnect/
 
 ## 10. Success Metrics (how we know MVP works)
 
-1. Someone can understand WeKonnect in **10 seconds** on the landing page
+1. Someone can understand Wapate in **10 seconds** on the landing page
 2. Someone can **find an event** in their city in **3 clicks**
 3. Someone can **view a creative profile** and understand their work
 4. Someone can **fill out create-event form** without confusion

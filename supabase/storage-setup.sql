@@ -1,4 +1,4 @@
--- WeKonnect image storage only — safe to run if Phase 3 failed partway through.
+-- Wapate image storage only — safe to run if Phase 3 failed partway through.
 -- Run in Supabase SQL Editor.
 
 insert into storage.buckets (id, name, public)

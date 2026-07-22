@@ -1,4 +1,4 @@
--- WeKonnect — Collaboration posts + timeline
+-- Wapate — Collaboration posts + timeline
 -- Safe to re-run. Paste into Supabase → SQL Editor → Run
 
 -- 1) Create the table if it does not exist yet

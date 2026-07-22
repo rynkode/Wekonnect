@@ -10,7 +10,7 @@ import { ImageUpload } from "@/components/ImageUpload";
 import { normalizeConnectForList, normalizeDisciplineList } from "@/lib/options";
 
 export const metadata = {
-  title: "Edit profile — WeKonnect",
+  title: "Edit profile — Wapate",
 };
 
 interface EditProfilePageProps {

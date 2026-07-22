@@ -1,4 +1,4 @@
--- WeKonnect Communities — run in Supabase SQL Editor
+-- Wapate Communities — run in Supabase SQL Editor
 -- Groups where creatives belong (find your tribe)
 
 create table if not exists public.communities (

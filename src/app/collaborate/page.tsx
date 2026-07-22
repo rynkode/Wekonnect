@@ -3,7 +3,7 @@ import { CollaborationCard } from "@/components/CollaborationCard";
 import { getCollaborations } from "@/lib/queries/collaborations";
 
 export const metadata = {
-  title: "Collaborate — WeKonnect",
+  title: "Collaborate — Wapate",
   description:
     "Find people to create with. Post what you're looking for — creative collaboration, not jobs.",
 };
