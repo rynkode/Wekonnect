@@ -16,6 +16,17 @@ export function AuthForm({ mode }: AuthFormProps) {
       <Field label="Email" name="email" type="email" required placeholder="you@example.com" />
       <Field label="Password" name="password" type="password" required placeholder="••••••••" minLength={6} />
 
+      {mode === "login" && (
+        <div className="-mt-2 text-right">
+          <Link
+            href="/auth/forgot-password"
+            className="text-sm font-medium text-clay hover:underline"
+          >
+            Forgot password?
+          </Link>
+        </div>
+      )}
+
       <button
         type="submit"
         className="w-full rounded-full bg-ink py-3 text-sm font-medium text-stone transition-colors hover:bg-clay"

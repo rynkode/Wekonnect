@@ -63,3 +63,67 @@ export async function signOut() {
   revalidatePath("/", "layout");
   redirect("/");
 }
+
+export async function requestPasswordReset(formData: FormData) {
+  requireSupabase();
+  const supabase = await createClient();
+
+  const email = ((formData.get("email") as string) || "").trim();
+  if (!email) {
+    redirect("/auth/forgot-password?error=" + encodeURIComponent("Enter your email."));
+  }
+
+  const siteUrl =
+    process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+
+  const { error } = await supabase.auth.resetPasswordForEmail(email, {
+    redirectTo: `${siteUrl}/auth/callback?next=/auth/reset-password`,
+  });
+
+  if (error) {
+    redirect(
+      `/auth/forgot-password?error=${encodeURIComponent(error.message)}`
+    );
+  }
+
+  // Always show success to avoid leaking whether an email exists
+  redirect("/auth/forgot-password?sent=1");
+}
+
+export async function updatePassword(formData: FormData) {
+  requireSupabase();
+  const supabase = await createClient();
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) {
+    redirect("/auth/login?error=" + encodeURIComponent("Link expired. Request a new reset."));
+  }
+
+  const password = formData.get("password") as string;
+  const confirm = formData.get("confirm") as string;
+
+  if (!password || password.length < 6) {
+    redirect(
+      "/auth/reset-password?error=" +
+        encodeURIComponent("Password must be at least 6 characters.")
+    );
+  }
+
+  if (password !== confirm) {
+    redirect(
+      "/auth/reset-password?error=" + encodeURIComponent("Passwords do not match.")
+    );
+  }
+
+  const { error } = await supabase.auth.updateUser({ password });
+
+  if (error) {
+    redirect(`/auth/reset-password?error=${encodeURIComponent(error.message)}`);
+  }
+
+  revalidatePath("/", "layout");
+  redirect("/explore");
+}
